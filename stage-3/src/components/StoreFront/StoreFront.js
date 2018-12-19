@@ -10,7 +10,6 @@ class StoreFront extends Component {
     }
 
     render() {
-        console.log(this.props.products);
         let productDisplay = this.props.products.map((element, index) => {
             return (
                 <div className="product-container" key={index}>
@@ -33,8 +32,8 @@ class StoreFront extends Component {
 function mapStateToProps(state) {
     return {
         products: state.products,
-        loading: state.loading,
+        loading: state.loading
     }
 }
 
-export default connect(mapStateToProps, {addToShoppingCart, getAllProducts})(StoreFront);
+export default connect(mapStateToProps, { addToShoppingCart, getAllProducts })(StoreFront);

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './ShoppingCart.css';
-import { removeFromShoppingCart } from '../../redux/reducer';
 import { connect } from 'react-redux';
+import { removeFromShoppingCart } from '../../redux/reducer';
 
 class ShoppingCart extends Component {
 
@@ -31,10 +31,9 @@ class ShoppingCart extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log(state);
     return {
         shoppingCart: state.shoppingCart
     };
 }
 
-export default connect(mapStateToProps)(ShoppingCart);
+export default connect(mapStateToProps, { removeFromShoppingCart })(ShoppingCart);
